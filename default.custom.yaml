@@ -20,3 +20,7 @@ patch:
   "translator/contextual_suggestions": false
   "translator/max_homographs": 5
   "translator/max_homophones": 5
+  key_binder:
+    bindings:
+      - { when: always, accept: Shift_L, toggle: ascii_mode }
+      - { when: always, accept: Shift_R, toggle: ascii_mode }

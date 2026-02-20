@@ -2,10 +2,12 @@ customization:
   distribution_code_name: Weasel
   distribution_version: 0.17.4
   generator: "Weasel::UIStyleSettings"
-  modified_time: "Fri Feb 20 10:28:02 2026"
+  modified_time: "Fri Feb 20 13:45:04 2026"
   rime_version: 1.13.1
 patch:
   style:
     horizontal: true
     inline_preedit: true
+    display_tray_icon: true
+    show_status: true
   "style/color_scheme": aqua
