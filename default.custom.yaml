@@ -24,3 +24,5 @@ patch:
     bindings:
       - { when: always, accept: Shift_L, toggle: ascii_mode }
       - { when: always, accept: Shift_R, toggle: ascii_mode }
+      - { when: has_menu, accept: minus, send: Page_Up }
+      - { when: has_menu, accept: equal, send: Page_Down }
