@@ -100,3 +100,73 @@ key_binder:
     - {accept: KP_8, send: 8, when: composing}
     - {accept: KP_9, send: 9, when: composing}
     - {accept: KP_Decimal, send: period, when: composing}
+
+
+  "punctuator/full_shape":
+        ' ' : { commit: '　' }
+        ',' : { commit: ， }
+        '.' : { commit: 。 }
+        '<': { commit: '《' }     # 
+        '>': { commit: '》' }     # 
+        '/': { commit: '／' }  
+        '?' : { commit: ？ }
+        ';' : { commit: ； }
+        ':' : { commit: ： }
+        '''' : { pair: [ '‘', '’' ] }
+        '"' : { pair: [ '“', '”' ] }
+        '\' : { commit: '、' }    # 
+        '|' : { commit: '·' }     # 
+        '`' : ｀
+        '~' : ～
+        '!' : { commit: ！ }
+        '@': { commit: '＠' }     # 
+        '#': { commit: '＃' }     # 
+        '%': { commit: '％' }     # 
+        '$': { commit: '￥' }     #
+        '^' : { commit: …… }
+        '&' : ＆
+        '*': { commit: '＊' }     # 
+        '(' : （
+        ')' : ）
+        '-' : －
+        '_' : ——
+        '+' : ＋
+        '=' : ＝
+        '[': { commit: '【' }     # 
+        ']': { commit: '】' }     # 
+        '{': { commit: '〖' }     # 
+        '}': { commit: '〗' }     # 
+
+  "punctuator/half_shape":
+      ',' : { commit: ， }
+      '.' : { commit: 。 }
+      '<': { commit: '《' }     # 
+      '>': { commit: '》' }     # 
+      '/': { commit: '、' }     # 
+      '?' : { commit: ？ }
+      ';' : { commit: ； }
+      ':' : { commit: ： }
+      '''' : { pair: [ '‘', '’' ] }
+      '"' : { pair: [ '“', '”' ] }
+      '\' : { commit: '、' }    
+      '|' : { commit: '·' } 
+      '`' : '`'   
+      '~': { commit: '~' }
+      '!' : { commit: ！ }
+      '@' : '@'
+      '#' : '#'
+      '%': { commit: '%' }      # 
+      '$': { commit: '￥' }     # 
+      '^' : { commit: …… }
+      '&' : '&'
+      '*': { commit: '*' }      # 
+      '(' : （
+      ')' : ）
+      '-' : '-'
+      '_' : ——
+      '+' : '+'
+      '=' : '='
+      '[': { commit: '【' }     # 
+      ']': { commit: '】' }     # 
+      '{': { commit: '〖' }     # 
+      '}': { commit: '〗' }     #
