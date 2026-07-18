@@ -1,142 +1,110 @@
-# 白霜拼音
+<div align="center">
 
-原始配置和词库由[雾凇拼音](https://github.com/iDvel/rime-ice)的 [af2480b](https://github.com/iDvel/rime-ice/commit/af2480ba1b147a6a54c0c21e2997ef451c34e036) commit 修改而来。
+# 🌳 万象拼音
 
-雾凇词库里的词比较全但也不是非常全，主要的问题是字频和词频不太对，废词有点多，于是重新制作。
+**重塑 Rime 生态，带来极致的输入体验。**
 
-主要维护词库、词频。在雾凇词库的基础上删除了不健康词汇，删除了大量冷僻词（频率==1 且分词器分不出的词），删除/调整了诸如“的吧”、“的了”这种不是词的词。手动大量修改了字频 词频。第一步是做了减法。
+[![快速上手](https://img.shields.io/badge/🚀_快速上手-探索文档-4CAF50?style=for-the-badge)](https://amzxyz.github.io/rime-wanxiang/)
+[![GitHub](https://img.shields.io/badge/⭐_GitHub_仓库-访问主页-2ea44f?style=for-the-badge)](https://github.com/amzxyz/rime-wanxiang)
+<br>
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![GitHub Release](https://img.shields.io/github/v/release/amzxyz/rime-wanxiang?filter=!nightly)](https://github.com/amzxyz/rime-wanxiang/releases/)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/amzxyz/rime-wanxiang/release.yml)](https://github.com/amzxyz/rime-wanxiang/actions/workflows/release.yml)
+[![GitHub Repo stars](https://img.shields.io/github/stars/amzxyz/rime-wanxiang?style=flat&color=success)](https://github.com/amzxyz/rime-wanxiang/stargazers)
 
-然后使用 745396750 字的高质量语料，进行分词，重新统计字频、词频，归一化，以达到更好的输入效果。全拼和双拼都可以使用。
+</div>
 
-### 使用方法
+---
 
-使用方法基本同雾凇拼音，微调了一些触发指令，加入了lua辅助码的支持。辅助码是可选项，按下`开启，不影响正常打字。
+## 🌌 万象拼音——基于深度优化的词库和语法模型
 
-- 符号 /fh 更多符号详见`https://github.com/gaboolic/rime-frost/blob/master/symbols_v.yaml`
-- 带调韵母 /a /e /u 等
-- 日期与时间 rq sj xq dt ts
-- 开启辅助码 ` [墨奇辅助码拆分说明](https://moqiyinxing.chunqiujinjing.com/index/mo-qi-yin-xing-shuo-ming/fu-zhu-ma-shuo-ming/mo-qi-ma-chai-fen-shuo-ming)
-- 部件拆字反查 uU
-- unicode字符 U
-- 数字金额大写 R
-- 农历 N
-- 计算器 V
+> **💎 核心基石：** [万象词库](https://github.com/amzxyz/RIME-LMDG) 经 AI 与海量语料深度优化(目前已进入手动维护期)，是一款专为“语句流”“类大厂”打造的全方案立体词库。它将**带调拼音标注、词组构成与精准词频**作为体验基石，以日常与专业词汇为主体，结合语法模型，为您带来精准、流畅的输入体验。
 
-### 如何安装&配置文件路径
-
-#### 手动下载安装
-
-下载本仓库的压缩包 Code - Download ZIP（或者下载[releases](https://github.com/gaboolic/rime-frost/releases)最新的 source-code.zip），解压到如下路径即可
-
-- Windows: `%APPDATA%\Rime` （可以在右下角小狼毫输入法右键打开菜单选用户文件夹）复制完之后，去输入法设定里选择白霜拼音，然后重新部署
-- Mac
-  - [鼠须管](https://github.com/rime/squirrel)路径为 `~/Library/Rime`
-  - [fcitx5-Mac 版](https://github.com/fcitx-contrib/fcitx5-macos)路径为 `~/.local/share/fcitx5/rime`
-- Linux
-  - [fcitx5-rime](https://github.com/fcitx/fcitx5-rime)路径为 `~/.local/share/fcitx5/rime`
-  - fcitx5 flatpak 版的路径 `~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime`
-  - [ibus-rime](https://github.com/rime/ibus-rime)路径为 `~/.config/ibus/rime`
-- Android
-  - [fcitx5-安卓版](https://github.com/fcitx5-android/fcitx5-android)路径为 `/Android/data/org.fcitx.fcitx5.android/files/data/rime`
-  - [同文](https://github.com/osfans/trime)路径为 `/rime`
-  - [雨燕](https://github.com/gurecn/YuyanIme) 已内置白霜词库词频，直接安装使用即可
-- iOS [仓输入法](https://github.com/imfuxiao/Hamster) 目前已内置，也可以通过【输入方案设置 - 右上角加号 - 方案下载 - 覆盖并部署】来更新白霜拼音。
+* **开放生态**：支持高度自定义，鼓励通过“词库 + 转写”打造您的专属输入方案。
+* **持续打磨**：我们极度重视数据准确与时效，欢迎随时反馈。
+* 📝 **[万象词库问题收集反馈表](https://docs.qq.com/smartsheet/DWHZsdnZZaGh5bWJI?viewId=vUQPXH&tab=BB08J2)**
 
 
-#### 通过 Git 安装
+---
 
-**首次安装：**
+## ✨ 效果预览
+![](https://storage.deepin.org/thread/202502200358104987_%E6%95%88%E6%9E%9C.png)
 
-根据用户使用的系统、安装的软件不同，先cd到对应的配置文件的父级目录(例如Windows为`%APPDATA%`、mac鼠须管为`~/Library/`)，然后执行以下命令：
+---
 
-`git clone --depth 1 https://github.com/gaboolic/rime-frost Rime`
+## 🧭 探索万象
 
-**后续更新：**
+<table width="100%" align="center" border="0" cellspacing="15" cellpadding="0">
+  <tr>
+    <td width="50%" valign="top">
+      <div style="border: 1px solid #546e7a4d; border-radius: 12px; padding: 20px;">
+        <h3>🚀 快速上手</h3>
+        <p>从零开始，为您在 Windows、macOS 以及 iOS/Android 移动端部署万象。</p>
+        <a href="https://amzxyz.github.io/rime-wanxiang/doc/intro"><strong>➡️ 立即安装</strong></a>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <div style="border: 1px solid #546e7a4d; border-radius: 12px; padding: 20px;">
+        <h3>⌨️ 核心输入体系</h3>
+        <p>深入解析万象独特的“带调拼音标注”、强大的辅码系统（小鹤、自然码等）以及中英混输机制。</p>
+        <a href="https://amzxyz.github.io/rime-wanxiang/doc/aux_code"><strong>➡️ 了解核心</strong></a>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <div style="border: 1px solid #546e7a4d; border-radius: 12px; padding: 20px;">
+        <h3>🪄 Lua 魔法扩展</h3>
+        <p>计算器、超级注释、符号包裹、动态时间戳... 探索让 Rime 拥有“超能力”的数十种微创新脚本。</p>
+        <a href="https://amzxyz.github.io/rime-wanxiang/doc/shijian"><strong>➡️ 探索魔法</strong></a>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <div style="border: 1px solid #546e7a4d; border-radius: 12px; padding: 20px;">
+        <h3>⚙️ 词库与模型</h3>
+        <p>深度解析万象的现代数据工程。算一笔隐形的“时间账”，彻底告别低效的候选翻页，让输入如呼吸般自然。</p>
+        <a href="https://amzxyz.github.io/rime-wanxiang/doc/dict_gram"><strong>➡️ 揭秘底层逻辑</strong></a>
+      </div>
+    </td>
+  </tr>
+</table>
 
-在 Rime 文件夹执行 `git pull` 即可。
+---
 
-- Mac: `cd ~/Library/Rime && git pull`
-- Windows: `cd "$env:APPDATA\Rime" && git pull`
-- 其他系统以此类推
+## 💎 标准版 vs 增强版
 
-#### 通过 东风破 安装
+万象提供两个主要版本，请根据您的输入习惯选择。为了获得最佳体验，**请务必了解您所选版本的特性**：
 
-选择配方（others/recipes/*.recipe.yaml）来进行安装或更新：
 
-- ℞ 安装或更新全部文件 执行bash rime-install gaboolic/rime-frost:others/recipes/full
+| 特性对比 <img width="180" style="display:none;" /> | 🟢 标准版 (Base) <img width="340" style="display:none;" /> | 🔵 增强版 (Pro) <img width="340" style="display:none;" /> |
+| :--- | :--- | :--- |
+| **适用人群** | 新手、全拼用户、追求省心的双拼用户 | 硬核双拼用户、重度辅码与造词需求者 |
+| **方案文件** | `wanxiang.schema.yaml` | `wanxiang_pro.schema.yaml` |
+| **支持类型** | 全拼、任意双拼 | **仅支持双拼** |
+| **自动调频** | 默认开启 | **默认关闭** (精准控制) |
+| **用户词记录** | 自动记录，无差别积累 | 手动/无感造词，词库绝对可控 |
+| **辅助码支持** | 仅基于声调的辅助 | **8 种辅助码可选** + 声调辅助 |
+| **全场景辅筛** | 支持两分、多分、笔画、声调 | 全面支持 + 专属辅助码筛选 |
 
-### 无智能模型时的输入效果
+---
 
-![alt text](others/img/gegegojx.png)
+## 生态：
 
-![alt text](others/img/mggjdgg.png)
+[薄荷拼音](https://github.com/Mintimate/oh-my-rime) :使用万象词库的综合性方案，特别是其修改的地球拼音能够继承万象的词库声调编码。
 
-![alt text](others/img/ddmdd.png)
+[鸢鸣万象](https://github.com/yuanz-12/wanxiang_yoemin) :一个基于万象拼音生态融合李氏三拼与辅助码能力的手机用方案。
 
-![alt text](others/img/tushuguancangshu.png)
+[万象虎](https://github.com/zhhwux/wxzhh) : 一个基于万象生态的虎码整句方案。
 
-![alt text](others/img/znjldkd.png)
+---
 
-![alt text](others/img/kudsvqw.png)
-
-![alt text](others/img/cqlbtdmdfu.png)
-
-![alt text](others/img/djbwv.png)
-
-![alt text](others/img/刚交的朋友.png)
-
-![alt text](others/img/刚交的好朋友.png)
-
-![alt text](others/img/刚交的好朋友2.png)
-
-![alt text](others/img/衍射.png)
-
-### To-Do
-
-- [x] 整理分词后词频比较高但词库没有的词加进去
-- [ ] 错字错音提醒lua
-- [ ] 写自动化脚本，把句子转成拼音，再用拼音调用 rime_api 生成句子，比对正确率，迭代
-- [ ] 加上墨奇码首末字形反查，例如 amq 引导符再打 mu cun 可以打出“村 櫉 梼 树”等字
-- [x] 加上 lua 引导辅助码的功能
-- [ ] 2 字词，动词+名词结构，中间加入“了” “完”，结尾加入“没”自动派生词汇。
-  - 例如：
-    - 拔牙： 拔了牙，拔完牙，拔牙没，没拔牙，拔没拔牙
-  - 形容词中间加“不”：
-    - 例如：厉害→厉不厉害
-- [ ] 类似“第四 四列 = 第四列”这种词加上去
-- [ ] 统计中文语料中的英文词频
-- [ ] 训练一个智能语言模型
-
-### 鸣谢
-
-雾凇词库 <https://github.com/iDvel/rime-ice> 白霜词库的初始词库、绝大部分配置来自雾凇词库
-
-结巴中文分词 <https://github.com/fxsjy/jieba>
-
-汉字转拼音(pypinyin) <https://github.com/mozillazg/python-pinyin>
-
-MNBVC 超大规模中文语料集 <https://github.com/esbatmop/MNBVC> 目前已有 33TB 数据量
-
-kenlm <https://github.com/kpu/kenlm> 官网<https://kheafield.com/code/kenlm/>
-
-kenlm 教程、python 调用 <https://github.com/mattzheng/py-kenlm-model>
-
-吉祥物(于2024-10-12捡来)：
-
-<img src="others/img/white-cat.jpg" width=30%>
-
-### 友情链接
-
-使用白霜词库的方案
-
-墨奇音形 <https://github.com/gaboolic/rime-shuangpin-fuzhuma>
-
-墨奇五笔整句 <https://github.com/gaboolic/rime-wubi-sentence>
-
-薄荷拼音 <https://github.com/Mintimate/oh-my-rime>
-
-雨燕输入法 <https://github.com/gurecn/YuyanIme> 一个开箱即用的安卓输入法 内置白霜词库
-
-### Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=gaboolic/rime-frost&type=Date)](https://star-history.com/#gaboolic/rime-frost&Date)
+<div align="center" style="margin-top: 3rem; margin-bottom: 2rem;">
+    <img alt="pay" src="./custom/赞赏.jpg" width="300" style="width: 300px !important; max-width: 300px !important;">
+    <p style="margin-top: 1.2rem; font-size: 1.1em;">
+         <strong>如果觉得项目好用，欢迎在 GitHub 为我们点亮 Star！</strong>
+    </p>
+    <p style="margin-top: 0.5rem; color: #555;">
+    <p style="margin-top: 0.5rem; opacity: 0.8;">
+        <i>用更优质的数据，接管你的候选词。</i>
+    </p>
+</div>
